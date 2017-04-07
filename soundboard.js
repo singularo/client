@@ -5,7 +5,7 @@ $.get(soundsUrl, (html) => {
 
   // Find all sounds in sounds index.
   $(html).find('a[href$=".mp3"]').each((index, soundLink) => {
-    sounds.push(soundLink.text.replace(/\.[^/.]+$/, ''));
+    sounds.push(soundLink.text.trim().replace(/\.[^/.]+$/, ''));
   });
 
   // Generate buttons for sounds.
